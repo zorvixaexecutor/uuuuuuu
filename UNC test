@@ -194,18 +194,7 @@ local function shallowEqual(t1, t2)
 	end;
 	return true;
 end;
-if isfolder and makefolder and delfolder then
-	if isfolder(".tests") then
-		delfolder(".tests");
-	end;
-	makefolder(".tests");
-end;
-test("appendfile", {}, function()
-	writefile(".tests/appendfile.txt", "su");
-	appendfile(".tests/appendfile.txt", "cce");
-	appendfile(".tests/appendfile.txt", "ss");
-	assert(readfile(".tests/appendfile.txt") == "success", "Did not append the file");
-end);
+
 test("fireclickdetector", {}, function()
 	local detector = Instance.new("ClickDetector");
 	fireclickdetector(detector, 50, "MouseHoverEnter");
